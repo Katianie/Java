@@ -1,0 +1,17 @@
+./background.jpg
+10
+10
+-1,-1,-1
+./Marshall.png
+./General.png
+./Colonel.png
+./Major.png
+./Captain.png
+./Lieutenant.png
+./Sergeant.png
+./Miner.png
+./Scout.png
+./Spy.png
+./bomb.png
+./flag.png
+./back.png

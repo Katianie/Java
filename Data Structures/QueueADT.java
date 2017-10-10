@@ -1,3 +1,5 @@
+package queues;
+
 /** Queue - QueueADT.java
 * Defines the behaviors of a basic queue.
 *
@@ -6,20 +8,25 @@
 *
 * Eddie O'Hagan
 * Copyright © 2009 Katianie.com
-*/package queues;
-
+*/
+
 public interface QueueADT<T>
 {
 	/**  Adds one item to the rear of the queue. */
-	public void enqueue(T newItem);
+	public void enqueue (T newItem);
+
 	/**  Removes and returns the item at the front of the queue. */
-	public T dequeue();
+	public T dequeue();
+
 	/**  Returns without removing the item at the front of the queue. */
-	public T front();
+	public T front();
+
 	/**  Determines whether or not the queue is empty. */
-	public boolean isEmpty();
+	public boolean isEmpty();
+
 	/**  Returns the number of items in the queue. */
-	public int size();
+	public int size();
+
 	/**  Returns a string representing the state of the queue. */
 	public String toString();
-}
+}

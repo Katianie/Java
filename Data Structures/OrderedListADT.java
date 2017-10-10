@@ -1,3 +1,5 @@
+package lists;
+
 /** List - ListADT.java
 * Defines the interface to an ordered list collection. Only
 * Comparable elements are stored. The order is determined by the key-field
@@ -8,11 +10,12 @@
 *
 * Eddie O'Hagan
 * Copyright © 2009 Katianie.com
-*/package lists;
+*/
+
 public interface OrderedListADT<T> extends ListADT<T>
 {
    /** Adds the specified item to this list at the proper location. */
-   public void add(T item);
-}
-
-
+   public void add (T item);
+}
+
+

@@ -1,0 +1,38 @@
+
+*.class
+*.prefs
+An Exponential Function/.classpath
+An Exponential Function/.project
+ArrayQueue/.classpath
+ArrayQueue/.project
+Binary Converter/.classpath
+Binary Converter/.project
+Birthday Paradox/.classpath
+Birthday Paradox/.project
+BlackJack/.classpath
+BlackJack/.project
+Dice Roll/.classpath
+Dice Roll/.project
+Exception Classes/.classpath
+Exception Classes/.project
+Fibonaci/.classpath
+Fibonaci/.project
+Film Review Editor/.classpath
+Film Review Editor/.project
+*.db
+*.png
+MapEditor/.classpath
+MapEditor/.project
+MapEditor/bin/.classpath
+MapEditor/bin/.project
+MapEditor/src/.project
+MapEditor/src/.classpath
+*.jar
+US Telephone Keypads/.classpath
+US Telephone Keypads/.project
+WebServer/.classpath
+WebServer/.project
+*.jpg
+*.Mjpeg
+*.Mjpeg
+*.Mjpeg

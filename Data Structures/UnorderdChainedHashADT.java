@@ -1,3 +1,5 @@
+package HashTables;
+
 /** Hash Table - UnorderdChainedHashADT.java
 * Interface for any Unorderd Chaned Hash Tables 
 *
@@ -6,8 +8,10 @@
 *
 * Eddie O'Hagan
 * Copyright © 2009 Katianie.com
-*/package HashTables;
+*/
+
 public interface UnorderdChainedHashADT<T>
 {
 	public void add(T item);
-}
+
+}

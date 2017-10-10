@@ -1,3 +1,5 @@
+package queues;
+
 /** Queue - ArrayQueue.java
 * The ArrayQueue class deals with an array of objects
 * in a queue like pattern.
@@ -7,54 +9,59 @@
 *
 * Eddie O'Hagan
 * Copyright © 2009 Katianie.com
-*/package queues;
+*/
 
 import exceptionclasses.*;
 
 public class ArrayQueue<T> 
 {
-	protected int myFront;
-	protected int myRear;
+	protected int front;
+	protected int rear;
 	protected int myNumItems;
-	protected Object[] myContents;
+	protected Object[] contents;
+	
 	/**
-	* ArrayQueue Constuctor: Handles the assignment statments for 
-	* the instance variables along with the creation of the array 
-	* myContents
-	*/
+	 * ArrayQueue Constuctor: Handles the assignment statments for 
+	 * the instance variables along with the creation of the array 
+	 * contents
+	 */
 	public ArrayQueue()
 	{
-		myContents = (T[])(new Object[5]);
-		myFront = 0;
-		myRear = 0;
+		contents = (T[])(new Object[5]);
+		front = 0;
+		rear = 0;
 		myNumItems = 0;
-	}
+	}
+	
 	public ArrayQueue(int size)
 	{
-		myContents = (T[])(new Object[size]);
-		myFront = 0;
-		myRear = 0;
+		contents = (T[])(new Object[size]);
+		front = 0;
+		rear = 0;
 		myNumItems = 0;
-	}
+	}
+	
 	/**
-	* enqueue: adds the specified target to the end of the queue
-	* 
-	* @param target
-	*/
+	 * enqueue: adds the specified target to the end of the queue
+	 * 
+	 * @param target
+	 */
 	public void enqueue(T target)
 	{
-		if(myNumItems >= myContents.length)
+		if(myNumItems >= contents.length)
 		{
 			expandCapacity();
-		}
-		myContents[myRear]= target;
-		myRear = (myRear + 1) % myContents.length;
+		}
+
+		contents[rear]= target;
+		rear = (rear + 1) % contents.length;
 		myNumItems++;
-	}
+		
+	}
 	/**
-	* dequeue: removes an element form the myFront of the array and returns it
-	* @return
-	*/
+	 * dequeue: removes an element form the front of the array and returns it
+	 * @return
+	 */
 	public T dequeue()
 	{
 		if(myNumItems == 0)
@@ -63,60 +70,76 @@ public class ArrayQueue<T>
 		}
 		else
 		{
-			T temp = (T)myContents[myFront];
-			myContents[myFront] = null;
-			myNumItems--;
-			myFront = (myFront + 1) % myContents.length;
+			T temp = (T)contents[front];
+			contents[front] = null;
+			myNumItems--;
+			
+			front = (front + 1) % contents.length;
+			
 			return temp;
 		}
-	}
+	}
+	
 	/**
-	* expandCapacity: creates a new array that is double the size of the 
-	* original array and copies the elements.
-	*/
+	 * expandCapacity: creates a new array that is double the size of the 
+	 * original array and copies the elements.
+	 */
 	public void expandCapacity()
 	{
-		Object[] temp = (T[])(new Object[myContents.length * 2]);
-		int i = myFront;
+		Object[] temp = (T[])(new Object[contents.length * 2]);
+		int i = front;
 		int j = 0;
-				do		{
-			temp[j] = myContents[i];
-			i = (i + 1) % myContents.length;
+		
+		do{
+
+			temp[j] = contents[i];
+			i = (i + 1) % contents.length;
 			j++;
-			
-		}		while(i != myRear);
-		myFront = 0;
-		myRear = myNumItems;
-		myContents = temp;
-	}
+
+		}while(i != rear);
+		
+		front = 0;
+		rear = myNumItems;
+		
+		contents = temp;
+		
+		
+	}
+	
 	public boolean isEmpty()
 	{
 		return myNumItems == 0;
-	}
+	}
+	
 	/**
-	* toString: returns a string containing the objects in the array
-	* from myFront to myRear
-	* 
-	*/
+	 * toString: returns a string containing the objects in the array
+	 * from front to rear
+	 * 
+	 */
 	public String toString()
 	{
 		String temp = "";
-		int i = myFront;
+		int i = front;
+		
 		if(myNumItems == 0)
 		{
 			return temp;
-		}
-		do		{
-			if(myContents[i] == null)
+		}
+		
+		do{
+			if(contents[i] == null)
 			{
 				i++;
 			}
 			else
 			{
-				temp += myContents[i].toString() + "\n";
-				i = (i + 1) % myContents.length;
+				temp += contents[i].toString() + "\n";
+				i = (i + 1) % contents.length;
 			}
-		}		while(i != myRear);
+		}while(i != rear);
+
 		return temp;
+		
 	}
-}
+
+}

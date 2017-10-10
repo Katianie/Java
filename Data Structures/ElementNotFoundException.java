@@ -1,3 +1,5 @@
+package exceptionclasses;
+
 /** Custom Exception Classes - ElementNotFoundException.java
 * This is an example on how to create your own exception classes
 * in java.
@@ -8,16 +10,17 @@
 * Eddie O'Hagan
 * Copyright © 2009 Katianie.com
 */
-package exceptionclasses;
+
+
 @SuppressWarnings("serial")
 public class ElementNotFoundException extends RuntimeException
 {
 	/**
-	* Initializes an ElementNotFoundException storing an appropriate message along with the type
-	* of the collection (as specified by the user).
-	*/
-	public ElementNotFoundException(String collection)
+	 * Initializes an ElementNotFoundException storing an appropriate message along with the type
+	 * of the collection (as specified by the user).
+	 */
+	public ElementNotFoundException (String collection)
 	{
 		super ("The target element is not in this " + collection);
 	}
-}
+}
